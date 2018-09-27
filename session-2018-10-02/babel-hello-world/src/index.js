@@ -1,6 +1,4 @@
-console.log("Hello World!");
-
-var cop = "BTPN";
+var com = "BTPN";
 var activity = "rock n roll";
 
-console.log(`Hello ${cop}, Are you ready for ${activity}?`);
+console.log(`Hello ${com}, Are you ready for ${activity}?`);
