@@ -40,25 +40,25 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={appStyles.container}>
-      <View style={appStyles.mainContainer}>
-        <ViewCountComponent 
-          value={this.state.count} 
-        />
-        <View 
-          style={appStyles.buttonContainer}
-        >
-          <Button
-            style={appStyles.counterButton}
-            onPress={this.addCount}
-            title="Tambah" 
+        <View style={appStyles.mainContainer}>
+          <ViewCountComponent 
+            value={this.state.count} 
           />
-          <Button
-            style={appStyles.counterButton}
-            onPress={this.subtractCount}
-            title="Kurang" 
-          />
+          <View 
+            style={appStyles.buttonContainer}
+          >
+            <Button
+              style={appStyles.counterButton}
+              onPress={this.addCount}
+              title="Tambah" 
+            />
+            <Button
+              style={appStyles.counterButton}
+              onPress={this.subtractCount}
+              title="Kurang" 
+            />
+          </View>
         </View>
-      </View>
       </View>
     );
   }
