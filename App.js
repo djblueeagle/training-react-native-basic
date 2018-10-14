@@ -9,72 +9,88 @@
 import React from 'react';
 import {
   StyleSheet,
-  View, 
-  Button,
-  Text
+  View,
+  Image,
 } from 'react-native';
-import ViewCountComponent from './src/ViewCountComponent';
+
+import MyCount from './src/Count/CountComponent';
+import MyButton from './src/Button/ButtonComponent';
+import MyTextInput from './src/TextInput/TextInputComponent';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 1
+      initial: "",
+      count: 0
     };
   }
 
+  onChangeText = (text) => {
+    this.setState({
+      initial: text,
+      count: text ? parseInt(text, 10) : 0,
+    });
+  }
+
   addCount = () => {
-    const {count} = this.state;
+    const { count } = this.state;
     this.setState({
       count: count + 1,
     });
   }
 
   subtractCount = () => {
-    const {count} = this.state;
+    const { count } = this.state;
     this.setState({
       count: count - 1,
     });
   }
 
   render() {
+    const { count, initial } = this.state;
+
     return (
-      <View style={appStyles.container}>
-        <View style={appStyles.mainContainer}>
-          <ViewCountComponent 
-            value={this.state.count} 
+      <View style={styles.container}>
+        <Image
+          style={styles.image}
+          source={{ uri: 'https://cdn-images-1.medium.com/max/1200/1*KANHihva9OdXx2-V5EDn3g.png' }}
+        />
+        <MyTextInput
+          value={initial}
+          placeholder="Input your value"
+          onChangeText={this.onChangeText}
+        />
+        <MyCount value={count} />
+        <View style={styles.buttonContainer}>
+          <MyButton
+            onPress={this.addCount}
+            title="Tambah"
           />
-          <View 
-            style={appStyles.buttonContainer}
-          >
-            <Button
-              style={appStyles.counterButton}
-              onPress={this.addCount}
-              title="Tambah" 
-            />
-            <Button
-              style={appStyles.counterButton}
-              onPress={this.subtractCount}
-              title="Kurang" 
-            />
-          </View>
+          <MyButton
+            onPress={this.subtractCount}
+            title="Kurang"
+          />
         </View>
       </View>
     );
   }
 }
 
-const appStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
+    alignItems: 'center',
     height: '100%',
+    margin: 20,
   },
   buttonContainer: {
+    width: '100%',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
   },
-  mainContainer: {
-    height: '30%',
-    justifyContent: 'space-evenly',
+  image: {
+    width: 200,
+    height: 200,
   }
 });
