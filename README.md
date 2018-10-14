@@ -1,1 +1,1 @@
-Repo for training React Native - Basic
+Repo for React Native - Basic
