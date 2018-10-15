@@ -20,10 +20,51 @@ import MyTextInput from './src/TextInput/TextInputComponent';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
+    console.log('=>App:Constructor');
     this.state = {
       initial: "",
       count: 0
     };
+  }
+
+  componentWillMount() {
+    console.log('=>App:ComponentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('=>App:ComponentDidMount');
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('=>App:ComponentWillReceiveProps');
+    console.log('nextProps:', nextProps);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('=>App:ShouldComponentUpdate');
+    console.log('nextProps: ', nextProps);
+    console.log('nextState: ', nextState);
+    const { count } = nextState;
+    // if (count > 10 || count < -10) {
+    //   return false;
+    // }
+    return true;
+  }
+
+  componentWillUpdate(nextProps, nextState){
+    console.log('=>App:ComponentWillUpdate');
+    console.log('nextProps', nextProps);
+    console.log('nextState', nextState);
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    console.log('=>App:ComponentDidUpdate');
+    console.log('prevProps', prevProps);
+    console.log('prevState', prevState);
+  }
+
+  componentWillUnmount(){
+    console.log('=>App:ComponentWillUnmount');
   }
 
   onChangeText = (text) => {
@@ -49,6 +90,9 @@ export default class App extends React.Component {
 
   render() {
     const { count, initial } = this.state;
+
+    console.log('=>App:Render');
+    console.log('state.count: ', count);
 
     return (
       <View style={styles.container}>
