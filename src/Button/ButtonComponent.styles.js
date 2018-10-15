@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     padding: 20,
     fontWeight: 'bold',
-  }
+  },
 });
 
 export default styles;

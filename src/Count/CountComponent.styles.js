@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     color: 'lightblue',
     fontSize: 70,
     fontWeight: 'bold',
-  }
+  },
 });
 
 export default styles;

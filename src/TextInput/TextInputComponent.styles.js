@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     borderWidth: 1,
     borderColor: 'black',
-  }
+  },
 });
 
 export default styles;
