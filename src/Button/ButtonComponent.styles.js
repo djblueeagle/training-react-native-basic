@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   button: {
-    width: 150,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'blue',

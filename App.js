@@ -64,10 +64,12 @@ export default class App extends React.Component {
         <MyCount value={count} />
         <View style={styles.buttonContainer}>
           <MyButton
+            style={{ flexGrow: 2 }}
             onPress={this.addCount}
             title="Tambah"
           />
           <MyButton
+            style={{ flexGrow: 1 }}
             onPress={this.subtractCount}
             title="Kurang"
           />
@@ -79,13 +81,13 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100%',
-    margin: 20,
+    margin: 20
   },
   buttonContainer: {
-    width: '100%',
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
