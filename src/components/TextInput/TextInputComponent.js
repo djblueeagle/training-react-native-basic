@@ -3,9 +3,9 @@ import { TextInput } from 'react-native';
 
 import styles from './TextInputComponent.styles';
 
-export default class ButtonComponent extends Component<Props> {
+export default class ButtonComponent extends Component {
 
-  constructor(props: Props) {
+  constructor(props) {
     super(props);
   }
 

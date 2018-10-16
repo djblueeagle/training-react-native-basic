@@ -3,9 +3,9 @@ import { View, Text } from 'react-native';
 
 import styles from './CountComponent.styles';
 
-export default class CountComponent extends Component<Props> {
+export default class CountComponent extends Component {
 
-    constructor(props: Props) {
+    constructor(props) {
         super(props);
     }
 
