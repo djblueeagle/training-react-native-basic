@@ -5,11 +5,11 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import MyCount from '../Count/CountComponent';
-import MyButton from '../Button/ButtonComponent';
-import MyTextInput from '../TextInput/TextInputComponent';
+import MyCount from '../../components/Count/CountComponent';
+import MyButton from '../../components/Button/ButtonComponent';
+import MyTextInput from '../../components/TextInput/TextInputComponent';
 import styles from './Home.style';
-import { counterIncrement, counterDecrement, setCounter } from '../../actions';
+import { counterIncrement, counterDecrement, setCounter } from '../../actions/index';
 
 class Home extends React.Component {
   constructor(props) {
