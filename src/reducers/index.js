@@ -1,5 +1,8 @@
+import mockNews from '../data/news.json';
 const initialState = {
-  counter: 0
+  counter: 0,
+  news: [],
+  loading: false,
 };
 
 const dataReducer = (previousState = initialState, action) => {
@@ -19,6 +22,17 @@ const dataReducer = (previousState = initialState, action) => {
         ...previousState,
         counter: action.payload
       };
+    case 'FETCH_NEWS':
+     return {
+       ...previousState,
+       loading: true,
+     };
+    case 'FETCH_NEWS_SUCCESS':
+    return {
+      ...previousState,
+      loading: false,
+      news: mockNews,
+    };
     default:
       return previousState;
   }
