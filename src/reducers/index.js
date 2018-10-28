@@ -31,7 +31,7 @@ const dataReducer = (previousState = initialState, action) => {
     return {
       ...previousState,
       loading: false,
-      news: mockNews,
+      news: action.response.content,
     };
     default:
       return previousState;

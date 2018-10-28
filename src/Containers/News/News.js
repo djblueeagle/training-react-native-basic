@@ -21,7 +21,7 @@ class Home extends React.Component {
         return (
             <View style={styles.listItem}>
                 <View style={styles.listItemLeft}>
-                    <Image 
+                    <Image
                         style={styles.listItemImage}
                         source={{uri: item.thumbnail[0]}}
                     />
@@ -35,14 +35,11 @@ class Home extends React.Component {
     }
 
     render() {
-        const { news, fetchNews, fetchNewsSuccess, loading } = this.props;
+        const { news, fetchNews, loading } = this.props;
         return(
             <View style={{ flex: 1 }}>
                 <Button
-                    onPress={ () => {
-                        fetchNews()
-                        setTimeout(fetchNewsSuccess, 3000)
-                    } }
+                    onPress={ fetchNews }
                     title="Get Data"
                 />
                 { loading && <ActivityIndicator/> }
@@ -60,8 +57,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-    fetchNews,
-    fetchNewsSuccess
+    fetchNews
 };
 
 //Connect everything

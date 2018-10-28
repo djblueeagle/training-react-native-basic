@@ -23,9 +23,3 @@ export const fetchNews = () => {
     type: 'FETCH_NEWS'
   };
 };
-
-export const fetchNewsSuccess = () => {
-  return {
-    type: 'FETCH_NEWS_SUCCESS'
-  };
-};
