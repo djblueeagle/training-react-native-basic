@@ -13,6 +13,10 @@ import { fetchNews, fetchNewsSuccess } from '../../actions/index';
 import styles from './News.styles';
 
 class Home extends React.Component {
+    static navigationOptions = {
+      title: 'Home',
+    };
+
     constructor(props) {
         super(props);
     }
